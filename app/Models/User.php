@@ -66,4 +66,12 @@ class User extends Authenticatable
             ->withPivot('role', 'invitation_accepted')
             ->withTimestamps();
     }
+
+    /**
+     * Get all comments made by the user.
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
