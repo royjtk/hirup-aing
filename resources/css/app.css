@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import Tailwind core */
+@import "tailwindcss";
+
+/* Import your views directory for template scanning */
+@source "../views/**/*.blade.php";
+@source "../js/**/*.js";
+@source "../../app/View/Components/**/*.php";
+@source "../../app/Livewire/**/*.php";
+
+/* Your custom styles below */
