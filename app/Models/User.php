@@ -45,4 +45,22 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the tasks that the user owns.
+     */
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    /**
+     * The tasks that the user is a member of.
+     */
+    public function memberTasks()
+    {
+        return $this->belongsToMany(Task::class)
+            ->withPivot('role', 'invitation_accepted')
+            ->withTimestamps();
+    }
 }
