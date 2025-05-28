@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('@tailwindcss/types').Config} */
 export default {
   content: [
     "./resources/**/*.blade.php",
@@ -23,6 +23,9 @@ export default {
           900: '#0c4a6e',
           950: '#082f49',
         },
+      },
+      fontFamily: {
+        sans: ['Inter var', 'sans-serif'],
       },
     },
   },
