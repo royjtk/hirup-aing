@@ -25,15 +25,20 @@
                                         Invited on: {{ $invitation->pivot->created_at->format('M d, Y') }}
                                     </p>
                                 </div>
-                                
-                                <div class="flex items-center space-x-2">
-                                    <a href="{{ route('invitations.accept', $invitation) }}" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-                                        Accept
-                                    </a>
+                                  <div class="flex items-center space-x-2">
+                                    <form action="{{ route('invitations.accept', $invitation) }}" method="POST" class="inline">
+                                        @csrf
+                                        <button type="submit" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+                                            Accept
+                                        </button>
+                                    </form>
                                     
-                                    <a href="{{ route('invitations.decline', $invitation) }}" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-                                        Decline
-                                    </a>
+                                    <form action="{{ route('invitations.decline', $invitation) }}" method="POST" class="inline">
+                                        @csrf
+                                        <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+                                            Decline
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                             
