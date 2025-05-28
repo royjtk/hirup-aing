@@ -1,22 +1,18 @@
-@extends('layouts.app')
+<x-app-layout>
+    <div class="flex h-screen bg-gray-50">
+        <!-- Sidebar -->
+        @include('layouts.sidebar')
 
-@section('content')
-<div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 bg-white border-b border-gray-200">
-                <div class="mb-6">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-2xl font-bold">Create New Task</h2>
-                        <a href="{{ route('tasks.index') }}" class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
-                            Back to Tasks
-                        </a>
+        <!-- Main Content -->
+        <div class="flex-1 overflow-auto">
+            <div class="max-w-4xl mx-auto p-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-4">Create New Task</h2>
+                        <livewire:task-form />
                     </div>
                 </div>
-                
-                <livewire:task-form />
             </div>
         </div>
     </div>
-</div>
-@endsection
+</x-app-layout>
