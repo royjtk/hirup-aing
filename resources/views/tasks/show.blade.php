@@ -48,12 +48,8 @@
                 </div>
                 @endcan
                 
-                <div class="mt-8">
-                    <h3 class="text-lg font-semibold mb-4">Task Activity</h3>
-                    
-                    <div class="bg-gray-50 p-4 rounded-lg">
-                        <p class="text-gray-500 italic">Task activity will be shown here in the future.</p>
-                    </div>
+                <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                    <livewire:task-comments :task="$task" />
                 </div>
             </div>
         </div>

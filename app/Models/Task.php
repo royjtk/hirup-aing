@@ -47,4 +47,12 @@ class Task extends Model
             ->withPivot('role', 'invitation_accepted')
             ->withTimestamps();
     }
+
+    /**
+     * Get the comments for the task.
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
